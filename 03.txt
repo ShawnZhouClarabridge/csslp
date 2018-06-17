@@ -1,0 +1,128 @@
+Security Policies and Regulations
+
+1.Regulations
+	Federal Information Security Management Act (FIMSA)
+	by National Insitute of Standards and Technologies (NIST), publication of a Risk Management Framework (RMF) 
+		- categorize information system
+		- select security controls
+		- implement security controls 
+		- assess security controls
+		- authorize information systems
+		- monitor security controls
+
+	Sarbanes-Oxley
+		accounting and finance in stock market
+
+	Gramm-Leach-Bliley
+		personal financial information (PFI)
+
+	HIPPA and HITECH
+	health-care insurance portability and accountability act
+	health info technology for economic and clinical health act
+		personal health information (PHI)
+
+	Payment Card Industry Data Security Standard - PCI DSS and PA DSS
+		bank cards, and payment application
+
+	Others
+
+2.Legal Issues
+	Intellectual Property: 
+		creations from mind granted to creator
+	Patents:
+		protect inventor's rights in exchange for a disclosure of the invention
+	Copyrights
+	TradeMarks
+	Trade Secrets
+	Warranty: product will work as expected
+
+3.Privacy
+	Privacy Policy
+		detail firms' responsibility to safeguard personal information (collection, storage, use and transfer)
+	
+	Personal Identification Information (PII)
+		info being used to distinguish and trace individual's identity
+
+	Personal Health Information (PHI)
+		HIPAA and HITECH
+
+	Breach Notifications
+		notice what/how/what system/what data/whose data, and answer to any other questions
+
+	Data Protection Principles
+		European Union Data Protection Directive (EUDPD):
+			personal data being collected and used for approved purposes and being destroyed/altered to be non personally identifiable
+		Safe Harbor Rules (for difference between US and EU)
+
+4*.Security Standards
+	ISO: (page-64 !!!)
+		9126
+		10746
+		12207
+		14143
+		15026
+		15288
+		15408
+		21827
+		2700x(1 2 3 4 5):
+			2700x for information security while 900x for quality management
+	NIST: 
+	National Insitute of Standards and Technologies
+		Federal Information Security Management Act (FISMA) 
+		Federal Information Processing Standards (FIPS)
+			mandatory sets
+		NIST-SP 800 series
+	Industry: SAFECode
+
+5*.Secure Software Architecture
+	COBIT
+	COSO
+	ITIL
+	Zachman: two-dimensional matrix
+	SABSA
+	SDLC
+	SEI CMMI
+	OWASP (TOP TEN)
+	OCTAVE (Carnegie Mellon)
+	BSI
+
+6.Trusted Computing
+	Principles:
+		security
+		privacy
+		interoperability
+		portability of data
+		controllability
+		ease of use
+
+	Ring Model: system-based method of protecting data and functionality from errors and malicious behaviors 
+	ring-0: OS
+		-1: I/O
+		-2: Device Drivers
+		-3: Applications
+
+	Reference Monitor
+		reference validation mechanism mediates the interaction of subjects, objects and operations
+			- complete mediation
+			- tamper-proof
+			- small enough
+
+	Protected Objects
+		cannot be directly interacted with, instead, must be done with protected sub-system
+
+	Trusted Computing Base
+		combination of hardware and software components that are employed to ensure security
+
+	Trusted Platform Model
+		implementation of specifications detailing secure crypto-storage on a chip 
+
+	Microsoft Trustworthy Computing Initiative
+		security 
+		privacy
+		reliability
+		business integrity
+
+7. Acquisition
+	commercial vs government off the shelf software: for purchase or for government use
+	buy vs build
+	outsourcing: offshore development to reduce costs

@@ -1,0 +1,149 @@
+Software Development Methodologies
+
+1.Secure Development LifeCycle
+(1) Principles:	
+	CIA
+	AAA
+	SEC
+	Least privilege
+	Separation of duties
+	Layered Security, defense in depth
+	Fail-safe -> exception management
+	Economy of Mechanism (A-Simple-A-P)
+	Complete Mediation (never bypassed)
+	Open Design
+	Least Common vs Leveraging Existing Component
+	Ease of use for users
+	Weakest link
+	Single point fail
+	
+(2) Security vs Quality
+	- high quality can be secure or not secure, but not high quality must be not secure
+	- fig 4-1:
+		quality without security -> vulnerabilities
+		security without quality -> undocumented features and improper behaviors -> not Secure
+	- Security feature vs secure software development:
+		specific elements vs all elements of a software
+
+2.SDL components
+	Team awareness and education
+		focusing on roles and responsibilities of each team members:
+		for all: basic security knowledge
+		advanced topics: threats, tools, techniques, aiming at specific type of team member
+
+	Gates and Security Requirements
+	Gate means security gate that must be passed 
+		periodic *reviews* of appropriate security requirements on software development
+		missing or incomplete prevent software going to next stage
+
+	Bug tracking
+		tracking all bugs and fixing at appropriate times
+		property of bug - DREAD:
+			damage potential
+			reproducibility
+			explore
+			affected users
+			discover-ability
+		Bug Bar:
+			measurement level, identify bugs not allowing to product, exceeded must be fixed
+
+	Threat Modeling
+		completely define and describe threats to the system under development
+		how data flows through system and provides insights into where threats, focus on truest boundaries
+		type of threats - STRIDE
+			spoofing
+			tampering
+			repudiation
+			information disclosure 
+			denial of service
+			elevation of privilege
+
+	Fuzzing
+		test technique on input interface 
+		input -> output, examines for undesired behaviors
+		two types of input: 
+			mutation which use existing data, 
+			generation which create input based on models of system
+
+	Security Review
+		examine and ensure that security related steps being carried out, no short-circuited
+
+3.Software Development model
+	WaterFall
+		requirements -> design -> implementation -> verification -> maintenance
+
+	Spiral
+		(1)determine objectives     ->  (2) identify and resolve risks 
+					|						         |
+		(4)plan the next iteration  <-	(3) develop and test
+	
+	Prototype ???
+		throwaway: simulation constructed to gain info on subset of requirements
+		evolutionary: 
+			mockup that provides some form of functionality
+			passed, other elements can be added
+
+	Agile Methods:
+		Scrum, what we use for PLAT tickets, security elements on product and backlogs get processed timely
+		Extreme programming (XP):
+			intended to improve software quality and responsiveness to changing customer requirements.
+			"releases" in short development cycles
+			CSI???
+	Open Source
+
+4.Microsoft SDL
+	Reduce number and also the severity of security vulnerabilities in a product
+
+	3D+C
+		Design:
+			design secure architecture and structure for software, keywords:
+				identifying threats, build threat model, and share with team member
+				can handle well-known security vulnerability type, e.g. SQL injection
+				pay attention to legacy codes, protocols and deprecating elements
+				defense in depth
+				educate end-user control to be able to make informed decision on data
+				minimizing data collection and retention for privacy issue and exposure issue
+				parent/enterprise to manage setting
+				sensitive data encrypted
+				key protection
+			bottom line is design is simple
+
+		Default:
+			default configuration is aS(security)ap
+			minimizing attack surface by setting elements off
+
+		Deployment:
+			deployment guides
+			patching and upgrade solutions
+
+		Communication:
+			security response function and development team
+			end-user
+			customer
+
+	SDL components:
+		training
+		requirements
+		design
+		implementation
+		verification
+		release
+		response
+
+1BX!!!
+2B
+3C
+4A
+5B
+
+6A
+7D
+8D
+9C
+0A???!!!
+
+1B
+2D
+3D
+4C
+5DX

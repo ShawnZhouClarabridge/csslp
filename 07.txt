@@ -1,0 +1,108 @@
+Requirements
+
+1. Functional Requirements
+	Software function expectation
+	Business requirements -> functional requirements
+		- Standard Requirements:
+			deployment platform requirement
+			database 
+			disaster recovery and business continuity planning (DR/BCP)
+			infrastructure
+		- Organization own coding requirement
+		- Security requirement
+
+(1) Subjects - Objects - Actions
+	Subjects: (who)
+		user and user's role definitions, like who using what
+	Objects:  (what)
+		subjects interact with, such as a software feature
+		access control list
+	Actions/Activities:  (how) 
+		events that subject can perform on object
+
+	Subject-object-activity matrix
+
+(2) Use Case and Abuse Case
+	use case: 
+		- examples of users and intended system behaviors
+		- not for all subject-object interactions, not a substitute for document
+		- help to define system indented behaviors
+			!!! for complex or confusing situations !!!
+	abuse case: 
+		- unauthorized users and prohibited actions
+
+	use/abuse case model -> graph
+		- use
+			shows intended system behavior for users
+		- abuse
+			present common known attack
+			examine system from attacker point of view
+			facilitate communication between designer/developer/tester
+
+(3) Sequencing and Timing
+	different system interact with same object at same time
+	about time/time order of system operations:
+	 	- Race Condition:
+			one process depends on a value from another process
+			lock
+			defined by race window:
+				a period of opportunity when concurrent threads compete in altering same object
+				- to identify race windows to avoid race
+
+		- Infinite loop
+			complex conditional logic with unhandled states
+
+(4) Secure Coding Standards
+		language-specific rules and recommended practices
+			- describe vulnerabilities
+			- preclude sets of vulnerabilities and exploited conditions in typical code
+		secure coding standards, published and to adopt
+			- Software Engineering Institute/CERT at CMU for C, C++ and Java
+		examples:
+			- error trapping and handling
+			- logging standards
+
+2. Operational Requirements
+	deployment, connection with existing system, integration
+
+	- new/expanded system interact with existing systems
+	- Secure Development Life Cycle's 3D+C
+		Design:
+			design secure architecture, keywords:
+				threat model
+				known security vulnerability type
+				defense in depth
+				end-user control
+				parent/enterprise control
+				sensitive data encrypted
+				key protection
+			bottom line is design is simple
+
+		Default:
+			default configuration is aS(security)ap
+			minimizing attack surface by setting elements off
+
+		Deployment:
+			deployment guides
+			patching and upgrade solutions
+
+		Communication:
+			security response function and development team
+			end-user
+			customer
+	- Deployment
+		deployed in environment as best suits
+			maintainability
+			data access
+			services access
+
+3. Requirement Traceability Matrix (RTM)
+	Management tool and documentation system:
+		Requirement Id
+		Requirement Description
+		Requirement Source
+		Test Objectives
+			individual test objective to illustrate compliance
+		Verification Methods
+			method to verify the test
+		Use Cases

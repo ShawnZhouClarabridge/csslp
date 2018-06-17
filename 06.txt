@@ -1,0 +1,74 @@
+1. Data Classification
+	understand all aspects of data before determining how to handle and protect data (protect level)
+	during data generation step
+
+	Date States:
+		Stored
+		Created
+		Transmitted
+		Changed
+		Deleted
+
+	Data Usage:
+		Internal
+		Input
+		Output
+		Addition:	
+			Security-sensitive
+			PII Personally Identifiable Information
+			Hidden
+
+	Data Risk:
+		High: severe
+		Medium: serious consequence
+		Low
+
+2. Data OwnerShip
+	Data Owner: DEFINE
+		who can determine classification, access, security controls and implementation
+	Data Custodian: OPERATION
+		maintaining those determination by owner, and performing operational tasks: backups, retention and disposal
+
+3. Labeling
+	by Different levels of sensitivity
+	by Impact: high,medium,low
+	separate levels of impacts defined by element for each attribute, based on: CIA impact
+		*typical impact: 
+			people, 
+			customer, 
+			financial
+	
+4. Type of Data:
+		structured:
+			with defined structures, XML, logs, etc
+		unstructured
+			Microsoft, PDF
+
+5. Data Lifecycle
+	Generation
+	Retention (persist): 
+		For business purpose !!!
+		The continued possession, use, or control, such as owner, purpose, protection, and how long, etc
+		e.g. system log
+		alternative sources:
+			backup, disaster recovery (DR), legal hold
+	Disposal:
+		Destruction: 1) ceasing to spend resources; 2) limit data-based liability
+		Alternative sources:
+			backup, disaster recovery (DR), data warehouse history
+
+1 d
+2 d !
+3 a !
+4 c
+5 d !
+6 b x
+7 d
+8 a
+9 b x
+0 c !
+1 a
+2 b
+3 a
+4 c ?
+5 c

@@ -1,0 +1,76 @@
+Defensive coding practices
+
+1. Declarative vs programmatic security
+	Declarative: 
+		specify "what" but not "how"
+		defining security relations respect to the container
+		container based approach to instantiate security
+		security rules are configured as part of deployment, not part of code
+	
+	Programmatic (or Imperative): 
+		security implementation is embedded into code
+		enforce more complex business rules
+
+	To choose D or P security functions, at design level, early stage elements:
+		
+		1) Bootstrapping self-sustaining startup process
+			- power on self-test (POST)
+			- boot loaders
+			- OS initialization
+		malicious software can interrupt bootstrapping process
+		when your applications relies on system elements, using configuration file to manage start-up 
+
+		2) Cryptographic Agility
+			manage the specifics of cryptographic function embodied in code without recompiling, through configuration files
+				e.g. switching from one algorithm to a more secure one
+			challenge: create software can be reconfigured via configuration files
+				e.g. using cryptographic library
+			additional assist in international problem
+				e.g. one Alg cannot be allowed at certain region
+			design level decision, include or not
+
+		3) Handling configuration parameters
+			- determine the criticality by analyze what functionality is subject to config alteration
+			- simplest: configuration folder with ACL
+			- highest: encrypting sensitive data in config file
+			- passing config data by a calling application
+
+2. Memory Management
+	dynamic use of memory from single/multiple programs, OS
+
+	- Managed code application: 
+		combination of managed code and code execution engine take care
+	- Unmanaged code: 
+		memory management shared between OS and application itself, thus
+		virtually all operations associated with resources are the responsibility of developer
+			garbage collection
+			thread pooling
+			memory overflows, etc
+
+	Type Safe: 
+		not inadvertently access arbitrary locations of memory 
+	
+	Locality: 
+		subsequent memory accesses are predictable and in close proximity to previous references 
+			solution: address space layout randomization
+
+3. Error Handling
+	errors -> detected -> correct process to be initiated
+	
+	exception management
+
+4. Interface Coding
+	application programming interfaces (API), entry point to software
+	- attack surface analysis on your own API
+	- examining third-party API that you want to use
+	- authentication
+	- audit (log) external interactions
+
+5. Primary Mitigations
+	- Lock down environment
+	- validation and control all input/output
+	- assuming external components can be subverted, and code can be read by any one
+	- choose libraries and frameworks
+	- industry-accepted security features
+	- integrate security into entire development life-cycle
+	- broad mix of methods to find and prevent weakness

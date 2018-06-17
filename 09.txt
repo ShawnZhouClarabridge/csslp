@@ -1,0 +1,147 @@
+1. Core Concepts - CIA
+	C:
+		Confidentiality Design:
+			1). Masking: data is displayed on the screen or on printed forms
+			
+			2). Cryptographic: data is transmitted or stored in transactional data stores or off-line archives
+					Overt: hashing, encryption, 
+					Covert: steganography, digital watermarking
+
+				Cryptanalysis: the science of finding vulnerabilities in cryptographic protection mechanisms.
+				
+				Work factor: the effort to subvert or evade the protection mechanisms, related to its key-size and the working mechanism used
+					For instance: 
+					If the brute force attack method is used to break the system (trying all possible combinations of the key), then the work factor is directly proportional to the length of the key.
+					Given time and computational power, almost all cryptographic algorithms can be broken, except for one-time pad
+
+				Key: A key is a sequence of symbols that controls the encryption and decryption operations of a cryptographic algorithm.
+				
+				Key management: life cycle includes the generation, exchange, storage, rotation (ToDo), archiving (ToDo), and destruction of the key
+
+
+			3). Encryption algorithms:
+				Symmetric:
+					a single key for encryption and decryption 
+					Advantages: fast and efficient
+					Challenges:	key exchange and management without compromising secrecy
+								scalability, more number of users, more keys
+								non-repudiation not addressed
+
+				Asymmetric:
+					Confidentiality: you use their public key to write message and they use their private key to read it
+					(Digital Signing: you use your private key to write message's signature, and they use your public key to check if it's really yours)
+					Advantages:
+						solve all challenges of symmetric
+
+			4). Encryption Applications:
+				Digital Certificates:
+					 Issued To
+					 Issued By: (Certificate Authority name)
+					 Validity Period: issued on, expires on
+					 Finger Prints
+
+				Digital Signatures
+
+	I:
+		Hashing: 
+			Assuring data integrity: sent original data with hash value, receive data and hash value with same hash
+			Collision free: computationally infeasible to compute the same hash value on two different input
+				Salted hash
+					Two people have same password, but different user name
+					Normal hash, hash value for PW will be the same
+					Salted hash, adding random bytes to original value, to get different hash values
+			Common hash functions: 
+				MD2,MD4,MD5
+				SHA-0,SHA-1,SHA-2(SHA-256/224, SHA-512/384)
+				HAVAL
+
+		Referential Integrity:
+			DB primary keys and foreign keys
+
+		Resource Locking:
+			Deadlock
+
+	A:
+		Replication:
+			data, database, software -> redundancy
+			master-slave or primary-secondary backup scheme
+
+		Failover:
+			Automatic switching from an active transactional software, server, system, hardware component or network to a standby (or redundant) system
+
+		Scalability:
+			Vertical scaling means that additional resources are added to the existing node.
+			Horizontal scaling means that newer nodes are added to the existing node.
+
+2. Core Concepts - AAA
+	Authentication:
+		multi-factor
+		single-sign-on (SSO)
+
+	Authorization:
+
+	Accountability
+
+
+3. Principles
+	good enough
+	least privilege
+	separation of duties
+	defense in depth
+	fail safe
+	economy of mechanism
+	complete mediation
+	open design
+	lease common mechanism
+	psychological acceptability
+	weakest link
+	leverage existing components
+	single point of failure
+
+4. Interconnectivity: inter-connectivity between components
+	session:
+		control communication sessions: users and program, program elements
+		HTTPS
+		individual communications should be separately encrypted
+		major concern: where to employ the methods
+	exception:
+		no information leakage
+	configuration
+
+5. Interfaces
+	Logging provides data, interface is the way how data can be accessed by security and support team
+
+		1) management consoles
+
+		2) log interfaces
+
+		3) In-band management:
+			use the same communication channel as application
+			simple in terms of communications
+			exposed to the same threats as communication channel
+
+		4) Out-of-band:
+			separate communication
+			allows management when app under attack
+			more resources
+
+	separate management interface allow users to management security reporting and give best presentations 
+
+1 b ?
+2 c
+3 a 
+4 d ?
+5 d x
+
+6 a x
+7 d
+8 b
+9 a
+0 c
+
+1 a
+2 d ?
+3 d
+4 b
+5 c
+

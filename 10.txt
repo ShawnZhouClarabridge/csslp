@@ -1,0 +1,188 @@
+Secure common Architecture
+
+1. Distributed Computing
+	Client Server
+		server: 
+			processing, storage, serving many users
+		client: 
+			single-user level processing and storage
+			thin vs fat
+		levels of communications: 
+			N-tier, e.g. 3-tier: client, server, DB server
+				- separation of duties and power
+				- adding communications and security requirement
+		cloud computing (details in Cloud part):
+			software as service
+			platform as service
+			infrastructure as service
+
+	Peer-to-Peer
+		member peer equivalent of processing
+
+	Message queuing
+		intermediate server to mediates transmission and delivery of information among processes or processing systems
+
+2. Service-Oriented Architecture (SOA)
+	Characteristics:
+		abstracted business functionality
+			program, business, processes, db, etc are abstracted into logical views
+		contract-based interfaces
+			communication between providing unit and consuming unit done by standard format interface contract
+		platform-neutrality
+		modularity and re-usability
+		discover-ability
+		interoperability:
+			Relating to systems, especially of computers or telecommunications, 
+			are capable of working together without being specially configured to do so.
+
+	2.1 Enterprise Service Bus (ESB)
+		a bus-based architecture to manage communications between processes, where all communications take place
+		figure 10-2 
+		- protocol conversions, communication translation, 
+			e.g. XML, EDL, WSDL, REST, DCOM, CORBA
+		- handle defined events
+		- msg queue
+		- mapping of data flows
+
+	2.2 Web Services
+		0) web service description language (WSDL)
+			- XML format, machine readable
+			- describe service contract and allowed operations	
+			- including service call, parameters, result data structure, etc
+
+		1) Simple Object Access Protocol (SOAP)
+		- secure messaging
+			XML encryption and signature
+			transport layer security
+		- resource protection
+			authentication
+			token-based
+		- contract negotiation
+			WSDL format interface
+			(contract-based interfaces: 
+				communication between providing unit and consuming unit done by standard format interface contract)
+		- trust relationships between provider and consumer
+			pairwise between provider and consumer
+			brokered
+				third party acts to provide the identity information of the services that can interact with one another
+			federated
+				different companies
+			proxy
+
+		2) Representational State Transfer (REST)
+		- unique resource address
+		- supports media type of data supported by Web service
+		- HTTP methods: get, put, post, delete
+
+3. Rich Internet Applications
+		use server as majority of processing 
+		use WEB as transfer mechanism, 
+		use client as processing device, for displaying and formatting
+			eg: Facebook
+		tech: flash, java, html5 and JS
+		wide range of functionality: 
+			- complex business interfaces to games to learning platform
+			- replicate desktop functionality
+
+	security mechanisms:
+		- same origin policy: 
+			a resource from one source cannot interact or manipulate documents from another source
+		- sandboxing: 
+			browser are restricted from accessing system resources
+	
+	client-side threats: 
+		always validation
+	
+	remote code execution: 
+		triggering code execution on one machine from another machine by network connection
+
+4. Pervasive computing
+	Any device embedded with a computer chip can be connected as part of network and access service
+		wireless: 
+			communications between devices can be seen by anyone within signal range
+			development take responsibility for security when data transmitted
+		location-based data:
+			sensitive, valuable, and abusable
+		constant connect:
+			everything connected
+		radio frequency id (RFID)
+			transmitter/receiver, read tag
+				- contact-less inventory
+				- track things
+			active/passive
+		near-field communication (NFC)
+			protocol of communication via 
+				- radio frequency energy 
+				- over short distance
+		sensor network
+
+5. Mobile Apps
+
+6. Cloud
+		Benefits: 
+			money cost, 
+			time to market, 
+			integrity of software versions
+
+		Characteristics:
+			on-demand self-service
+			broad network access
+			resource pooling
+			rapid elasticity
+			measured service
+
+		Types: 
+			public 
+			private 
+			community 
+			hybrid cloud
+		
+		Models: I/P/S as a Service
+			I: infrastructural components, network equipment, storage, virtual machine
+				- user deploy and operate arbitrary software
+				- user does not worry about specifics of infrastructure
+				(understanding: just configured virtual machine, such as GCP compute instance, we are deploying)
+			P: with I, adding OS, middleware and runtime provided as service
+				- selected collection of elements into a designed solution stack for a specific problem:
+					apps
+					db
+					web services
+					storage
+					others
+				(understanding: GCP's certain problem solver, like DB, storage)
+			S: with P, software and data hosting
+				- software runs on external hardware
+				- user derives benefit through browser(like) interface
+				- user does not manage or control underlying, only limited custom specific settings
+				(understanding: PLATFORM of CMP)
+		
+		Security concerns:
+			1 Data Leak
+				data storage: crypographic agility
+				data disclosure: overwriting/formatting
+			2 Unauthorized Access
+				Chinese Wall model
+			3 Insecure API's: 
+			  Proprietary API's
+			4 Service Interruptions
+			5 Malicious Insiders
+			6 Cloud Abuse
+			7 Due Diligence/Risk Profile
+
+1 A
+2 B ???
+3 C
+4 C
+5 D ???
+
+6 B
+7 A !!!
+8 D x
+9 A
+0 D
+
+1 D
+2 A
+3 A
+4 A x
+5 C

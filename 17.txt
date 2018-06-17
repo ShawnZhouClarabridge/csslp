@@ -1,0 +1,196 @@
+Security software acceptance
+
+1. Introduction of Qualification testing
+Definition: 
+	Determine whether a system satisfies its acceptance criteria: 
+		by design, performance, and assurance 
+	- initial costumer requirement documents
+	- pertinent contract
+	- standard
+	- legal requirement
+
+Qualification testing plan:
+	scope, approach, resources and schedule
+	considerations:
+	- required feature to be tested
+	- requisite load limits
+	- stress tests
+	- risk mitigation and security tests
+	- performance level
+	- interface to be tested
+	- tests cases for aforementioned issues
+	create any test case with input and output
+	target:
+		expose latent defects
+		achieve sufficient understanding of quality and security
+
+??? Qualification testing hierarchy 
+	begins at component level -> hierarchy level -> fully integrated system level
+	architecture, components, interfaces and data
+	iterative process
+
+-----------------
+
+2. Pre-release
+All actions prior to release to ensure.
+Objective assessment of accuracy, completeness, consistency, testability
+	behavior:
+	- ongoing activity on top of meaningful changes to product in the latter stage
+	- being executed in parallel through final stages (software integrated)
+	- collect and preserve entire pre-release tests, covering from unit to integration test
+	- pre-release tests and with integrity of all relevant data
+	meaning:
+	- assures products complies with purpose
+	- enhance management's understanding
+	- guarantee product perform reliably
+	general plan:	
+	- preparation of comprehensive test plans
+		plan at beginning of the project
+		mainly including test requirement and test cases
+		given by both customer and supplier
+	- testing organization conduct tests by plan
+	- dynamic nature of software (fix one failure, might fail on others)
+		-> makes total product assurance prior to release not necessarily achievable
+
+Implementation factors:
+	objectives
+	scope
+	approach
+	focus: testing effort
+
+Conducting a test steps:
+	- consulting all requirements/functional designs/related documents
+	- identifying high-risk aspects, testing priority, scope and limitations of the tests
+	- approaches and methods, and requirements of testing environment
+	- input to specific task, responsibility requirements
+	- test plan and being approved
+	- test cases and being approved
+	- tracking process, logging and archiving process
+	- actual test inputs, do test
+	- evaluating and reporting
+
+Keyword: Test Case
+A document describing input action and expectation to produce predictable response:
+	- including: 
+		test case identifier
+		name
+		objective
+		conditions
+		setup
+		input
+		steps
+		expectations
+	- find problems from requirement and design
+	- examine system under controlled condition
+
+Test Case Type:
+	- black-box
+	- white-box
+	- load/stress/performance test -> load
+		load -> heavy load
+		stress -> unusually heavy load, where to fail
+		performance -> benchmarks established in advance
+	- usability 
+		"user friendliness", depends on customers 
+	- Beta testing
+		by end users or others, development and testing are essentially completed
+	- Alpha testing (not as common as Beta)
+		by end users or others, product is nearing delivery, about minor design changes
+	- common test Tools:
+		code analyzer
+		coverage analyzer
+		memory analyzer
+		load/performance test tools
+		web test tools:
+			links
+			HTML
+			client/server side programs
+
+Complete Criteria
+characterize a tangible outcome or action that can be judged in objective terms, to determine its eventual point of completion
+	software abstract, thus need action/output to be tangible
+	ISO-9126:
+		functionality: requirements, accuracy, interoperability, functional compliance, security
+		reliability: maturity, fault tolerance, frequency of failure, recoverability
+		usability: ease of use, logical understanding of software
+		efficiency: 
+			- time: response time/throughput rates
+			- resource: amount of resources used and duration of such use
+		maintainability: time to analyze and address problem
+		portability: 
+			product being adapted to given situation, ease of installation, conformance with organization regulations
+
+Risk Acceptance
+Risk: a range of properties that must be considered in order to stay secure
+	safety requirement
+	security requirement
+	software complexity
+	performance 
+	reliability
+Tasks to ensure those properties, defined early and in contract
+
+Two factors to determine risk acceptable or not (risk assessment):
+	- likelihood
+	- estimate of loss 
+	-> identifying greatest probability and most harm
+
+Risk assessment accuracy requires:
+	- concrete evidence
+	- detailed knowledge
+	- accepted and repeatable, systematic and coordinated data collection
+	- practical scope of inquiry being precisely defined and limited to particular identified threat
+	- only drive acceptance about specific vulnerabilities (question range) at a precise point in time (time range)
+
+General risk assessment factors:
+	- interrelationships with system assets
+	- specific threats to each asset
+	- precise business and technological risks
+
+-----------------
+
+3. Post-release
+	configuration and configuration audit:
+		start with baseline generation
+		ensure products installed and operating correctly
+		ensure site-dependent parameters
+		practical change request and anomaly reporting
+
+	including:
+	- configuration and baseline 
+		generation
+		audit
+		management and management administration
+		revision
+	- operation and maintenance problem report
+	- abnormal evaluation, reporting and resolution
+	- change of assessment and reporting
+	- general status reporting
+	- etc.
+
+V&V
+	Validation: software meets specified user requirements, are we building the right product?
+	Verification: proper software construction, are we building the product in a right way?
+	V&V plan:	
+		abnormal resolution and reporting
+		exception/deviation policy
+		baseline and configuration
+		standards practices
+		documentations
+
+management v&v: examine management process
+ 	examine: management plans, schedules, requirements and method
+ 	support: management personnel who have direct responsibility for a system
+ 	discover and report variations from plans or defined procedures
+ 	consider things as statement of project objectives
+
+technical v&v: evaluates software product itself
+	examine: requirements, design documentation, code, test, user documentations/manuals, release notes, build and installation 
+	support: supplier and customer's technical and management personnel with direct responsibility
+	discover and report defects and anomalies
+	consider things for technical reviews
+
+-----------------
+
+4. Independent Testing
+	independent v&v
+	third-party testing to ensure confidence in the delivered product

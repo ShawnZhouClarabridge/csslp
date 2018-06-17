@@ -1,0 +1,273 @@
+Technologies
+
+1. Authentication and Identity Management
+(0) Basics:
+	Identity process: 
+		user establish identity
+	Authentication: 
+		verifying credentials against established identity set
+
+(1) Identity Management:
+	Identity life-cycle: 
+		provisioning:
+			creation of a digital identity from an actual identity
+			binds some secrets that can be verified
+			key element: protect secret but make it usable
+		management:
+			activities: 
+				changes to rights and privileges
+				addition and removal of roles
+			management to be automated and logged (A standard: Sarbanes-Oxley SOX section 404)
+			using third-party enterprise-level IDM system:
+				automated password reset: 
+					challenges, no expose old pw
+				password synchronization
+				single sign-on
+		de-provisioning:
+
+(2)	Authentication:
+		secrets: know, have, are
+		common best-practice mechanism: 
+			activities logging; 
+			lock-out after successive failures
+			integration with authorization system
+			functionalities:
+				password/token reset 
+				account recovery 
+				periodic change 
+				password strength
+		federated id system:
+			for "single-sign-on", allows to connect to system from know system  
+			fig 11-1:
+				user -(want access to)-> relying party <--> identity provider (where users' credentials created)
+			OpenID: (this is who I am)
+				for federated authentication
+				third party to authenticate users by using accounts that users already have
+				E.G. exchange.intermedia.net for email
+			OAuth: (access token)
+				access token that can be exchanged via API
+
+2. Credential Management
+(0) Basics:
+	credential: identifying information
+	credential management tasks:
+		generation 
+		storage 
+		synchronization
+		reset
+		revocation 
+	(all being logged)
+
+(1) X.509 Credentials:
+	transfer !!!asymmetric!!! keys between parties in a verifiable manner
+
+	R(registration)A(Authority): verifies an individual identity
+	C(certificate) A(         ): generates digital certificate
+
+	X.509 Digital Certificate Field:
+		version number: version of X.509 standard
+		serial number: unique number, one certificate by one CA
+		signature algorithm: hashing ALG
+		issuer: info about the CA
+		validity: dates info of valid for use
+		subject: certificate owner
+		public key
+		certificate usage:
+			approved usage of the certificate
+		extensions: additional data
+
+(2) Single sign-on
+	reuse credentials after authentication, without re-entering secret again
+	credentials stored outside of application
+	sharing information methods:
+		Kerberos
+		Security Assertion MarkUp Language (SAML)
+	balance between risks and objectives (which is user convenience)
+
+3. Flow Control
+(1) Network-level Firewalls
+	Policy enforcement device, on packet level
+	Usage case:
+		To allow desired communications and block undesired communications
+		To work with intrusion detection systems, as enforcer to another system's input
+	Limit: 
+		governed by network architecture, especially when numerous path exist
+	Types:
+		Stateless: packet-by-packet basis using just addressing info, not carrying info from packet
+		Stateful : analyze multiple packets, utilize info from protocols being carried
+
+(2) Proxy:
+	act as middleman
+	traffic from untrusted -> first terminated at a proxy -> forwarded to intended system, if meeting correct rules
+					 									  -> terminated, if not
+	
+	security device: 
+		rule-based-processing, rule complexity
+	performance-enhancing device: 
+		additional functionalities, such as caching
+
+(3) App-level Firewalls
+	users/potential users (client) <--> App Firewalls <--> web-based app (server)
+		working as app-specific gate-way to monitor traffic in both directions
+	guard against intruders and misbehaving apps
+	block un-authorized requests
+	block abnormal large-scale data from leaving
+
+(4) Queue Tech
+	message transport from sender to receiver
+		syc or asyc: 
+			asyc can alleviate network congestion during high traffic period 
+		guaranteed or best effort
+	queue technologies:
+		a guaranteed mechanism of asynchronous transport
+
+4. Logging
+(0) Basics:
+	what to log: 
+		- compliance (comply externally) programs (such as HIPPA) have logging requirements (HIPPA, SOX,PCI DSS, EOC, etc.)
+		- incident response
+		- investigators need to research failures and issues
+	where to store:
+		- local:
+			easy to implement
+			but log itself needs to be secured
+		- individual log combined with event across logs 
+			third-party security info and event management tool
+			e.g. reading sever.log and es.log at same time
+	
+	???Syslog:
+		Internet Engineering Task Force (IETF) Approved protocol, for log msging
+		Unix centric format, sending log info across IP network			
+			- User Datagram Protocol (UDP)
+			- security: 	 Transport Layer Security (TLS) based security
+			- communication: Transmission Control Protocol(TCP) based communication
+
+5. Data Loss Prevention
+	Data is the asset to protect
+	DLP is the last line of defense-in-depth
+	Mechanism: screen traffic, look for traffic that meets specific data
+	Challenges:
+		1) detection location, especially for large enterprises with numerous of connections
+		2) visibility into data, (e.g. when attack using encryption it cannot be detected)
+		3) moving to cloud
+
+6. Virtualization
+advantages:
+	reduce cost of servers
+	improve operational efficiencies (admin)
+	improve portability
+	agility to scale environments (e.g. cloud compute)
+
+7. Digital Rights Management (DRM)
+	Protection of intellectual property
+		- copy protection 	
+		- usage rights
+		- authenticity
+		- integrity
+	Entities: users, contents, and rights
+	Rights Expression Language (REL), XML based, machine-readable form, 
+		ccREL
+		ODRL
+		MPEG-21
+		XrML
+	about permissions restrictions and usage case
+
+8. Trusted Computing
+To ensure computer behaves in consistent and expected manner
+(1) ???TCB
+	trusted computing base
+	set of all hardware, firmware, software components critical to security
+	element can effect an increase in privilege without being authorized
+
+(2) TPM 
+	trusted platform module	
+	hardware implementation of a set of cryptographic functions on computer motherboard
+		- deeper than operating system and virtually tamperproof from software side
+		- can hold encryption key which can only be accessed through TPM chip
+	explain:
+		1) The TPM generates encryption keys, keeping part of the key to itself. So, if you’re using BitLocker encryption or device encryption on a computer with the TPM, part of the key is stored in the TPM itself, rather than just on the disk. This means an attacker can’t just remove the drive from the computer and attempt to access its files elsewhere.
+
+		2) This chip provides hardware-based authentication and tamper detection, so an attacker can’t attempt to remove the chip and place it on another motherboard, or tamper with the motherboard itself to attempt to bypass the encryption
+	fig 11-4:
+		cryptographic processor: 
+			random number generator 
+			hash generator
+			RSA Key generator
+		versatile memory
+		persistent memory
+		I/O via hardware bus
+
+(3) Malware
+	software with malicious intent
+	without sign of nefarious nature
+	different forms, working together
+
+(4) Code Signing
+	who the provider/author is
+	integrity
+
+9. Database
+	Encryption
+		data at rest
+		- native db management system functions
+		- external cryptographic resources
+		to decide encryption strategy:
+			what level of risk?
+			what usage pattern?
+			what's more sensitive?
+			how to encryption other places?
+			what's available encryption? 
+	
+	Triggers
+		automate anything
+
+	Views
+		not possible to disclose, as not including sensitive data
+
+	Privilege Management
+
+
+10. Programming language environment
+	
+	Complied languages:
+		compiling: source code -> processor-specific code
+		linking: connecting of various program elements
+			- libs, dependency files, resources, etc.
+			- static : copy all requirement into final executable, fast but can lead to bloated file sizes 
+			  dynamic: placing names and relative locations, while being resolved at runtime
+
+	Interpreters:
+		slower execution, 
+		faster change between revisions, 
+		no need to compile and link
+
+	Hybrid:
+	 	JVM Java
+	 	common language runtime (CLR)
+
+	Compiler switch:
+	 	control how the complier handles certain aspects of program construction
+
+	Sand boxing:
+	 	execution of computer code in an environment designed to isolate code
+
+	Managed
+	 	Java, .Net
+
+	Un-managed code, performance advantages
+	 	memory allocation
+	 	type safety
+	 	garbage collection
+	 		
+
+11. Operating system
+
+12. Embedded system
+	- dedicated system 
+	- hardware and software are coupled together
+	- specific purpose
+		1) control system:
+			PLC
+		2) firmware:
+			software but held in device
+			hard to change

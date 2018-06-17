@@ -1,0 +1,97 @@
+Security Testing
+
+1. Scanning
+automated enumeration of specific characteristics of application
+	-> develop team will get a wealth of info how a system will behave when deployed, 
+	-> then identify potential issues
+
+types:
+	- network: 
+		what network devices are available and responsive 
+	- systems: 
+		specific OS in place, OS fingerprint
+	- vulnerability
+
+standard:
+	- payment card industry data security standard (PCI DSS)
+	- OWASP TOP 10
+	- SANS TOP 25
+
+2. Attack surface analyzer: (on Windows System)
+	- detect changes occur to the underlying WIN OS when app is installed, and corresponding security impact
+		1) changes in the attack surface results when APP installed
+		2) aggregate (合计) attack surface change when APP in environment
+		3) evaluation of risk where APP exist
+		4) provide incident response team with info 
+	- operates independently of the application 
+
+3. Penetration testing
+attack a system (based on information and knowledge about a system), expert knowledge in how weakness can exist
+	more active
+	aiming at weakness and vulnerabilities, and planned mitigations' effectiveness
+
+scanning -> passive
+penetration -> active
+
+Steps:
+	- discovery and enumeration
+	- attack and explore
+	- removal of evidence
+	- reporting
+Begins with specific objectives
+Structured, systematic, slow and methodical process
+
+4. Fuzzing
+brute-force way of addressing input validation
+	- sending a multitude of input signals (specially malformed inputs), 
+	- seeing how program handle them
+	- aim at input validation errors, etc
+	
+	- apply at anywhere data is exchanged: 
+		network protocols
+		file protocols
+		web protocols
+		cross-site scripting 
+		injection
+
+	- smart testing: using knowledge of APP itself 
+	  dumb testing : random
+
+	- generation-based: using specifications of input streams
+	  mutation-based  : using know good traffic and mutate it
+
+5. Simulation test
+testing the application in an environment that mirrors the associated production environment
+	aiming at configuration issue and data issue causing grammatic instability, etc
+
+key idea: considering challenges associated with instantiation of system
+	- application configuration and setup can be complicated
+	- it is the last testing line of defense, to ensure system is properly functioning 
+	- verify interface with OS
+	- check firewalls
+	- validating system itself can stand up to rigors
+
+6. Testing for failure
+most testing is for failure:
+	commonly error -> failure -> vulnerabilities become exploitable
+	example: load testing, software tested for capacity issues
+	
+identify errors/defects even those do not cause a failure
+	- not a failure in current version, but in future
+	- incorrect values
+
+
+7. Cryptographic validation
+Using approved algorithm and implement them correctly
+	- error-1 choose to develop your own algorithm (solution: never)
+	- error-2 instantiating/implement the algorithm (solution: using libs)
+	- error-3 generation of random numbers breaks by determining seed and random sequence (solution: using numbers being cryptographically random)
+	- error-4 key management (never hard-code, keys being generated and then pass by reference, minimizing the travel of copies)
+standard
+	FIPS 140-2
+
+8. Regression test (focus on versions)
+Before software solution can be trusted across multiple versions, regression test needed, as software is changing all the time
+	- minor element at early stage, time-consuming by growing
+	- not to re-test everything, but to determine correct level, breadth and scope of regression tests
+	- using delta analysis and historical trending reports can assist

@@ -1,0 +1,81 @@
+Policy Decomposition
+
+1. CIA requirement:
+	C:
+		who to see
+		mechanism to enforce confidentiality
+		business requirements 
+	I:
+		who to alter
+		mechanism to detect errors and enforce integrity
+		business requirements
+	A:
+		available for authorized users
+		denying for unauthorized users		
+
+2. AAA requirements:
+	Authentication:
+		Identification: 
+			record created -> shared secret between user and system
+				mechanism used for identity
+				management of identity
+
+		Authentication: 
+			user presenting the known shared secret
+				methods of authentication management
+				strength of authentication methods
+
+		something you "know, have, are"
+
+		comprehensive requirement: 
+			level of security
+			scale and management of users
+			specific use
+
+		both party to each other -> mutual authentication
+
+	Authorization:
+		subject-object-activity model
+			subject: user
+			object: software item (ie, some feature)
+			activity: the desired action of the software
+		
+		Mandatory Access Model:
+			security system controls access 
+			owner or subjects cannot change
+			OS decide what label attached to every object and subject
+
+		DAC:
+			owner of an object decide which other subjects may have Access
+			Mandatory Access Model (MAC) vs Discretionary Access Model (DAC)
+
+		RBAC:
+			Role
+
+		Rule-BAC:
+			using access control list(ACL)
+			rules in ACL
+
+	Auditing:
+		Risk-based auditing issue:
+			inherent risk: associated with process inherent error rate, assuming no internal controls
+			detection risk: audit not detect an issue
+			control risk: controls not detect or not prevent material errors 
+		
+		Organizational characteristics:
+			Roles and responsibilities
+			Separation of duties
+			training and qualifications
+			change & control management
+
+3. Internal & External requirements:
+Internal:
+	protect audit logs
+	data loss prevention
+	monitor internal system traffic
+	monitor internal controls
+
+External:
+	compliance with external obligations
+	external connections (API for instance) with security controls and authentications
+	content filtering and proxies

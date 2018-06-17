@@ -1,0 +1,113 @@
+1. Attack Surface Evaluation
+	attack surface: 
+		code or resources that can be accessed by unauthorized parties
+	disable unnecessary functionality
+	living document across development team
+
+	Attack Surface Measurement:
+		build or use published list of access (how can be accessed)
+			page-178
+		history of known vulnerabilities associated with previous versions
+		not necessarily vulnerabilities but will be attacked
+			- elements at the base of all vulnerabilities
+		difference:
+			software is different, no compare among different softwares
+
+	Attack Surface Minimization
+		turning off elements not needed by most users
+		off for some, on for others, restricting access
+		development process: 
+			calculate and document attack surface, and as early as possible
+		design process:
+			design baseline
+			listing elements and details
+
+2. Threat Modeling
+	identify and document all of the threats, including the mitigating actions, acts as a living documentation
+
+	Threat model development: 5 steps
+	1) identify security objects
+		define security objectives
+		driven by comprehensive sources: 
+			legal, 
+			contractual, 
+			corporate standards, 
+			objectives
+
+	2) system decomposition
+		ensure security objects covered in actual design of the system
+		data flow diagrams DFD model:
+			external entity: 
+				users
+				other systems
+			data stores
+				file, db, registry, memory and queue
+			trust boundaries: 
+				where an attacker can interject into system
+				key elements, including:
+					users, 
+					file system 
+					and process boundaries, etc
+				inside a boundary share same privileges
+			data flows
+				functions
+				remote procedure call
+				network
+
+	3) threat identification (STRIDE)
+		(1) experienced security person
+		(2) info given by system decomposition phrase, DFD model, documents what need to be protected
+		(3) use STRIDE repeatedly and everywhere
+		+----------------+-----------+-----------------+------------------------+-------------------+------------------------+
+		| spoofing       | tampering | repudiation     | information disclosure | denial of service | elevation of privilege |
+		| authentication | integrity | non-repudiation | confidentiality        | availability      | authorization          |
+		+----------------+-----------+-----------------+------------------------+-------------------+------------------------+
+		(4) avoid being distracted by things application cannot control
+		(5) using an automated tool to manage documentation
+
+	4) mitigation Analysis (DREAD)
+		four mitigation types:
+		(1) redesign: 
+			best as to remove risk, but early
+		(2) standard mitigation: 
+			common, known effective, economical
+		(3) new mitigation: 
+			risker and more costly
+		(4) accept the issue
+		
+		threat model dynamic document, even cannot use mitigation immediately
+		threat model document:	
+			attack tree model: attack objectives as root node, down to all necessary conditions
+			priority: high/medium/low or DREAD
+				damage potential
+				reproducibility
+				exploitability
+				affected users
+				discover-ability
+
+	5) thread Model Validation
+		threats:
+			attack and impact in details
+		mitigations:
+			associated with a threat and relevant to context of application
+
+3 Control Identification and Prioritization
+	security control:
+		mechanisms to manage security
+	priority be afforded to security control
+
+4 Risk assessment for code reuse
+	old errors do so again
+	old code
+		being subjected to the same scrutiny as new code 
+		being included in threat modeling
+	reviews and walk-throughs -> insights into risk with legacy code
+
+5 threat model Documentations, to communicate among develop team
+	documenting: 
+		security objectives
+		enumeration of threats
+		vulnerabilities and mitigations 
+		dependencies and assumptions
+
+6 Design and Architecture technical review

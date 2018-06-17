@@ -1,0 +1,135 @@
+Common Vulnerabilities and countermeasures
+0. Categories
+1) CWE/SANS TOP25, pretty much all understandable
+2) OWASP TOP10 (Open Web Application Security Project OWASP)
+
+1. Common Vulnerabilities and countermeasures
+1) Injection Attacks
+	Sql: 
+		when inputting a specific string to do something other that design
+		steps:
+			- give test input, to see if accessible and manipulatable
+			- experiment, using error msg -> get info
+			- sql injection with goal
+			- when sql error suppressed, using structured form of attack (Blind)
+		design SQL access without allowing SQL statements being possibility manipulated by users
+			- use stored procedures
+			- use parameterized queries
+			- validation input
+		awareness, test, and validation methods
+
+	OS cmd: 
+		when program perform a function handled by OS, and user's input as argument and user's input includes OS cmd 
+		awareness, test, and validation methods
+		
+	Integer overflow
+		language specific solution
+		turning to exception handling
+		testing using boundary values to force internal errors during testing
+
+	Path traversal
+		e.g. using ../ to goes up, to access files and dirs stored outside the web root
+			- not use user input to access local resource
+			- matching user input to a specific resource, and then using hard-coded path
+
+	Cross-site scripting attack (XSS)
+		user input includes script but not mitigated, 
+			- non-persistent: executed immediately and pass back result via web server
+			- persistent: stored on web server or even back end storage
+		will do anything that designed by developer
+			steal authentication info
+			session hijacking
+			deploy hostile content
+			change settings
+			impersonate a user
+			fish or steal sensitive info
+		solution:
+			Using Anti-XSS lib to strip scripts from input
+			Limiting type of uploads
+			Screen uploading size
+			Testing 
+
+	Cross-site request forgery (CSRF)
+		Behavior:
+		- authenticated user in a previous authentication
+		- by tricking the authenticated user's browser, send HTTP request to target site, and trust is exploited
+		Solution:
+			Limiting authentication times
+			Cookie expiration
+			Managing specific elements like web page header and do checking
+			Use of random CSRF tokens
+
+2) Cryptographic Failures
+	hard-coded credentials
+	missing encryption of sensitive data
+	using broken/risky/own created algorithm
+	using code without integrity check
+	using one-way hash without salt
+		rainbow tables:
+			all possible combination of passwords up to 14 characters, hash value can be looked up
+		salt value is concatenated to the password
+			- increasing password length
+			- identical passwords between different accounts no longer yield same hash value
+
+3) Input Validation Failures
+	Input validation suited for:
+		buffer overflow
+		untrusted input reliance or not
+		cross-site scripting and cross-site request forgery
+		path traversal
+		buffer size incorrect calculation
+
+	Output validation
+
+	Buffer Overflow
+		input buffer that is used to hold input is overwritten with data that is larger than the buffer size
+			- poor programming practice 
+			- language weakness
+		solid coding
+		validate all inputs 
+
+	Canonicalization errors
+		application manipulate strings to a base form
+
+		Issue behavior:
+		validation check before canonicalization, where everything looks good 
+		-> canonicalization by application(s) 
+		-> string's base form is hostile
+
+	Missing defense function
+		missing or incorrect at:
+			authentication, and authentication attempts count
+			authorization, permissions, unnecessary privileges
+			upload file size/type
+			URL redirection
+			untrusted site
+			uncontrolled format string
+
+4) General programming failures
+	source code should be tested by static tools to screen code
+
+2. Common Enumerations
+	common weakness enumerations CWE
+		weakness, by community initiative
+	common vulnerabilities and exposures CVE
+		vulnerabilities
+
+3. Visualization
+	considering applications will be always visualized 
+
+4. Embedded system
+	specific purpose system
+	attack aiming at info disclosure
+
+5. Side Channel
+attack cyptosystem implementation itself, instead of the strength of the algorithms
+	
+	timing attacks
+	power attacks
+	electromagnetic attacks: 
+		read CRT monitors patterns from a distance
+	data remanence attack: 
+		read data from RAM at very cold temperatures
+
+6. Social Engineering Attack
+	phishing (fishing)

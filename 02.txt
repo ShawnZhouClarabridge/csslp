@@ -1,0 +1,146 @@
+Risk Management
+
+1. Definitions and Terminology
+(1) General terms:
+	risk: possibility of loss
+	residual risk: risk that remains after control
+	total risk:
+	risk management: overall decision-making process 
+		1) identifying threats and vulnerabilities with its impacts
+		2) determining costs to mitigate 
+		3) deciding what actions 
+	risk assessment (no actions to mitigate, focus on impact): 
+		1) analyzing to identify risks 
+		2) mitigating actions to determine impact
+	asset: resource and info to run business
+	vulnerability: characteristics of an asset that can be used by threat
+	attack: 
+	impact: the loss
+	threat: anything with potential to cause harm to asset
+	mitigate: reduce
+	control: detect -> prevent -> mitigate
+
+(2) Q&Q
+Qualitative risk assessment: 
+	subjectively determining
+
+Quantitative terms:
+
+	quantitative risk assessment: being objective, 
+	highly depends on historical data
+
+	single loss expectancy (SLE): impact per occurrence of threat
+	exposure factor: magnitude of loss of an asset, percentage of loss of an asset 
+		SLE = asset value * exposure factor
+
+	annualized rate of occurrence (ARO): frequency of an event expected to happen annually 
+		ARO = number of events/number of years
+
+	annualized loss expectancy (ALE): how much loss of an event to cost annually
+		ALE = SLE * ARO
+
+(3) Well-formed risk management statement: fig 2-1
+		asset vs. threat             -> impact
+		vulnerability vs. mitigation -> probability
+
+2. Type of Risk
+(1) Systematic vs Unsystematic
+	meaning predictable or not
+
+(2) Business vs Technology
+Business Risk: 
+	financial: treasury, revenue, contract, fraud
+	regulatory: security, privacy, business operation regulations  
+	business continuity: recovering from disaster
+	technology: at decision and management level
+Technology Risk:
+	security & privacy: corresponding risk coming with technologies used to do implementation
+	project management risk: software developed with project management, thus with corresponding risk
+	change management risk: software is keep changing
+
+(3) Risk Controls
+Types of control actions:
+	Administrative 
+	Technical 
+	Physical
+For each action, type of controls:
+	Preventive: to prevent attack, primary
+	Detective: to detect and record attack, like logs
+	Corrective: to correct, recover and reduce impact
+	Compensating: to do its job when primary set failed, defense in depth
+Control framework: 
+	fig 2-2
+
+3. Qualitative Risk Management
+	- expert judgment and experience
+	- quickly prioritize risk without exact quantification
+	- impact of threat & probability to occur
+	- info expressions could be: 
+		qualitative matrix
+		failure mode effects analysis: 1-10 for severity, probability and detectability
+
+4. Quantitative Risk Management
+(1) Annualized Loss Expectancy model
+	single loss expectancy: 
+		SLE = asset value * exposure factor
+	annualized rate of occurrence:	
+		ARO = number of events/number of years
+	ALE:	
+		ALE = SLE * ARO
+
+(2)	Residual Risk Model
+	a control applied, risk being reduced by some measurable amount
+
+(3) Calculate !!!
+
+5. Governance, Risk and Compliance
+(1) regulations and compliance
+	regulations, can be internal or external:
+		- based on contract
+		- based on policy or strategic initiatives
+		- defined by organizations
+		- regulations or laws
+	compliance -> external requirement
+	conformance -> internal requirement
+
+(2) legal:
+	intellectual property (IP)
+	data breach:
+		- personally identifiable information (PII)
+			protect by encryption, to meet PCI DSS
+		- protect data prior to loss, such as encryption
+
+(3) standards
+
+6. Risk Management models
+general model:
+	asset identification
+	threat assessment
+	impact analysis
+	control design and evaluation
+	residual risk management
+
+software engineering institute (SEI) model:
+	identify
+	analyze
+	plan
+	track
+	control
+
+1 B
+2 B
+3 C
+4 D
+5 A
+
+6 A 
+7 B X
+8 D
+9 B
+0 A ??? X
+
+1 C
+2 D
+3 B ???
+4 A ???
+5 B

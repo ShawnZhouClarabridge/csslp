@@ -1,0 +1,58 @@
+1. Code Analysis
+	inspect code for weakness and vulnerabilities
+	any level of development
+		unit level -> code review
+		sub-system level
+		system level
+		complete application level
+
+	- static: 
+		without being executed
+			on source code: from high level language code, to machine code
+				- human can review high-level 
+				- tools can review for any form
+			on object code
+		using source code analyzers as automated tools
+			- syntax
+			- approved function/library calls
+			- rules and semantics associated with logic and calls
+
+	- dynamic:
+		while software is executed
+		fed with input, expect to produce behaviors
+			- monitor operations of high parallel programs
+			- thread checking routines
+			- race conditions
+			- memory addressing
+
+2. Code/Peer Reviews (Code walk-through)
+team member group work, to produce clean and highly reliable code
+	- code quality
+	- team understanding
+	- educational
+FIG-14-1 issues
+
+3. Build Environment
+	code created -> compiled -> linked -> tested -> packaged -> distributed
+	- correct build tools
+	- with correct settings, configurations and building options 
+	- together as part of secure development life-cycle
+		e.g. Microsoft's GS complier enables stack overflow protection on cookies (best approach)
+		e.g. gradle build enhancement and issues
+	- language dependencies and legacy issue
+	- safe libraries
+
+4. IDE
+	integrated development environment
+
+5. Anti-tampering Techniques
+	make sure code is genuine and not tampered with
+	code signing: 
+		ensure integrity and evidence of source of software
+		cannot ensure bug or defect free
+		steps:
+			author -> code hashed to be digest -> digest encrypted with private key -> transmit both code and encrypted digest 
+			user -> receive both code and encrypted digest -> code hashed with same ALG to be digest
+																		> compare with <
+														   -> digest decrypts with author public key	
+6. Version control

@@ -1,0 +1,92 @@
+Security Quality Assurance Testing
+
+1. Standards for software quality assurance
+	ISO9216: *quality in software products*
+	ISO21827 (SSE-CMM): processes of *secure engineering systems* 
+	OSSTMM: assessing *operational* security build upon analytical metrics
+
+2. Functional Testing
+Functional test on: RLPS
+	1) reliability: 
+		availability and functionally complete availability
+		(resiliency: how strongly software can perform when under attack; 
+		 recoverability: how can software recover after attack)
+	2) logic
+	3) performance
+	4) scalability
+
+Functional test general steps:
+	identify what functions to be tested
+	creating input
+	determine expected output
+	execute test with created input
+	compare real output with expected
+
+1) Unit testing
+	development team work, find error at earliest step
+	ensure logic elements
+
+2) Integration or System Testing
+	- correct form and level of emergent (紧急的) properties
+	- overall system meets system-level requirement
+	- integration of components, not just individual model
+	- and data transfers between components
+
+3) Performance testing
+	determine bottlenecks and performance factors, not finding specific bugs
+
+	- Service Level Agreement (SLA) test:
+		expected service levels of agreement can be expected from software
+	- load testing
+	- stress test
+	
+	- recoverability: restore itself after security protection breached
+
+3. Security Testing
+	white box: 
+		full knowledge: 
+			complete documentation
+			source code
+			configuration parameters
+		software structure and design, at early stage
+		low false positives
+		logic flaws are detected
+	
+	black box: 
+		no knowledge
+		software behavior, at advanced system-level
+		high false positives
+		logic flaws not detected
+	
+	grey box:
+
+4. Environment
+	software operate within specific environment
+	test data movement, operations and dependencies across trust boundaries 
+		(where data move from one module set to another)
+
+5. Bug Tracking
+	Remediation:
+		removal 
+		mitigation 
+		transfer of responsibility
+		ignore
+
+	Category of defects:
+		bugs, errors in coding
+		flaws, in design
+		behavioral anomalies
+			how application operates (CSI Chinese Name rule issue)
+		errors and faults: 
+			outcome based issue from other sources
+		vulnerabilities
+			items that can be manipulated to make system operate improperly
+
+	Defect
+		defect database to contain information
+		tracking all defects, even those not closed
+	Error
+		documented and recorded
+	Vulnerabilities
+	Bug bar
+		types of errors that cannot go into production

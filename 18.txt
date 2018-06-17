@@ -1,0 +1,146 @@
+Secure Software Installation and Deployment
+	Ensure system is embedded in customer system with correctness
+	Ensure strategic planning about effectiveness
+
+1. Software Installation and Deployment
+
+software lifecycle:
+	development: 
+	sustainment: installation, deployment, operations and maintenance
+
+installation and deployment plan (K8S, mikalai and mat) 
+	make plans:
+	START: policies and procedures
+	-> activities and tasks
+	-> real-world actions 
+	-> tangible set of regular activities 
+	-> obtaining real-time performance data 
+	-> receiving/tracking/resolving problem reports
+
+installation validation and verification (masoom and ram)
+	to approve release, decision makers must confirm all criteria: code, database, installation and deployment plan 
+		assessment to support approval decision: MITRE Common WeakNess Enumeration (CWE)
+	to guide changeover process, new system replace old one:
+		concurrent operation and steps to phase out of old/phase in the new
+
+planning for operational use (monitoring, adv support team)
+normally wide-ranging and continuous review process
+	1) monitoring and reporting plugged into the formal management system, 
+		by certain people: not directly accountable to management team but directly fed into management team
+	2) monitoring based on explicit enforcement mechanism
+	3) professionals having specific knowledge base about deployment and installation, such as participation in development
+
+custom support
+	custom support and configuration manager
+		(permanent effects on system operation must be performed by system staff)
+	distribute users' request to appropriate parties
+	report solution and eventual outcomes
+	official sign-off of issue
+	workaround
+	day-to-day technical assistance
+
+bootstrapping
+	entail one-shot process to ensure operational correctness of initial configuration
+		- proper default and execution parameters
+		- desired level of access control
+		- definition of privacy
+		- security
+		- public key infrastructure management settings -> effective protection
+	known as booting
+		- power on self-test (POST)
+		- followed by initial program load (IPL)
+	overall use of product:
+		- definition and deployment of policies, rules, practices
+
+secure startup
+	turn on power to os complete control of the system, use of trusted platform module (TPM) chip
+		trusted platform module:
+		hardware implementation of a set of cryptographic functions on computer motherboard
+			- deeper than operating system and virtually tamper-proof from software side
+			- can hold encryption key which can only be accessed through TPM chip
+		explain:
+			1) The TPM generates encryption keys, keeping part of the key to itself. So, if you’re using BitLocker encryption or device encryption on a computer with the TPM, part of the key is stored in the TPM itself, rather than just on the disk. This means an attacker can’t just remove the drive from the computer and attempt to access its files elsewhere.
+			2) This chip provides hardware-based authentication and tamper detection, so an attacker can’t attempt to remove the chip and place it on another motherboard, or tamper with the motherboard itself to attempt to bypass the encryption
+
+2. Configuration Management
+
+1) organizing the configuration management process
+	customer: maintenance of product after release
+	supplier: manage configuration of the product prior release
+	contractor: if product is developed through supply chain
+
+	supplier writes configuration plan, but configuration joint creation ensures all configuration management responsibilities
+		- fully understood
+		- properly defined and maintained
+		
+		on producer side:
+			individuals as configuration managers, ensure requirements of plan are carried out
+			conducting audits, to ensure security and quality characteristics
+		
+		on customer side also assigns a representative:
+			resolve config control issues 
+			approving config change proposals and concluding agreements
+			transition between development to eventual product
+
+	processes
+		- configuration control
+		- verification control
+	
+	actual entities
+		- change process management: authorization, verification, release
+		- baseline control: change accounting and library management
+		- configuration verification: status accounting to verify compliance
+	
+2) configuration management roles and work:
+	configuration manager:
+		ensure all fundamental requirement of change management
+		receive, document, authorize and verify all software changes
+	baseline manager: 
+		assure integrity of all configuration items, any config items are identified accounted for and maintained
+		establish and maintain a baseline management ledger
+			configuration item descriptor label
+			promotion/version level
+			associated change
+	verification manager:
+		assuring product integrity is maintained during change process
+
+3) configuration management plan:
+		specify and assign three roles above:
+			authority, scope, responsibility, etc
+
+		establish and maintain !!!configuration identification scheme!!!
+			proper identification and labeling of all elements of configuration
+			it is the foundation, represents the basic structure of software
+			done during requirement analysis phase
+
+		!!!product identification number (pin)!!! set up and maintain
+			items defined at any level of abstraction with the configuration identification scheme baseline has unique labels
+			"family tree" structure
+
+		timely info provision
+		
+		verifying and validating changes
+
+4) configuration management process and activities:
+	configuration management process implementation 
+		-> plan to enumerates all activities
+
+	configuration identification
+		-> setting up identification scheme, identify software items that comprise baselines
+
+	configuration control
+		-> receive requests to fix and enhance product
+		-> analyze and evaluates impact
+		-> review appropriate entities, timely
+		-> audit trail to track each modification
+
+	configuration status accounting
+		-> keep track of all baseline configurations and maintaining associated recording function that indicates status and history
+	
+	configuration evaluation
+		-> evaluate and certify correctness when a change being executed
+	
+	release management
+		controlled repo
+		dynamic
+		achieve

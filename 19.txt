@@ -1,0 +1,238 @@
+1.Secure software operations
+	to operate software in intended environment
+	ensure product effectiveness !!!
+	support for user community
+	being applied on hardware
+
+operation process implementation
+	1) monitor and assure effective everyday operation
+	2) call any deviation from anticipated execution to attention of management
+	3) document and track user-generated problem/request for change
+	- start with: plan activities needed to develop/purchase and install product
+	- continue with: activities to sustain product during useful life-cycle
+
+connecting operation to change
+	whenever problems are encountered in performance of routine monitoring:
+		- problem reported, recorded and to change requests
+		- acted on by configuration management
+		- with proper feedback
+
+planning for secure operation
+	specific activities and tasks 
+		- to fulfill routine goals and purposes of policies
+	strategy and operational standards 
+		- for common generic activities and tasks 
+	providing direct feedback to management about any problem or change request
+		to management 
+		to user community
+		to stakeholder & organization decision maker
+	documenting and recording any unresolved problem, and moving documentation back to maintenance process
+
+operational monitoring and control
+	testing on released version of software
+	confirm satisfying: all meaningful operational aspects of new release, code base, database, configuration modification
+	promote product to full operational status
+	once approve to release, recognize product actually been delivered and inform back to entity
+	developer might operate new product during certain period
+
+customer support
+	necessary advice and product support to user, must be analyzed, planned and authorized
+	record/document the support actions that have been taken
+	forward user requests to -> maintenance process
+	requests involving development of code/new versions to -> maintenance process, analyzed, planned and authorized
+	resolutions should go without high dependency on configuration management
+	shot-term solution vs long-term development
+	assistance and consultation: training, documentation etc, requested by user VS scheduled training
+
+ensuring service operation
+	software assets are ensured to be functioning as built within intended environment
+	monitoring any routine service
+		-> service criteria for operational use
+
+2. Maintenance Process: 
+		1) monitoring 
+		2,3,4) incident/problem/change management
+	give cost-effective modification
+	give operational support
+	give adhoc services: such as training, help desk, etc
+
+	strategy: 
+		understanding the impacts of changes to existing info system or process
+	
+	migrating upgrades into customer's environment
+	preserving integrity, rational management of changing
+	maintenance is necessary when modify code or documentations
+
+	in sum: plan, control, assurance and communication
+
+2.1 monitoring
+	monitor state of assurance associated with the system, respond to any incidents
+	needs:
+		- routing, day-to-day monitoring and report responsibility connected to overall assurance effort
+		- operational assurance, as explicit enforcement, on all requisite monitoring and reporting practices
+		- conflict resolution process, to solve problems
+
+	organization build:
+		review team do not report to the manager of the project under review
+		review team report to local management agent
+		no more than one position between the review team manager and senior site manager
+	
+	human factors:
+		sustainment (knowledge base) rather than development
+		be allowed to inspect existing development and maintenance plan
+		participate in design and code inspections
+		review all unit test plan 
+		interpret existing test results
+	
+	monitoring requirement:
+		to manage something, one must measure it
+
+2.2 incident management
+	incident: any event that disrupts normal operation
+	incident management: maintain incident response ability of a company
+		monitoring -> analysis -> response
+
+	two kinds of response:
+		response being planned in advance
+			because of presence of vulnerabilities is known
+		response to incidents being unforeseen
+			quickly understood
+			best possible response
+			central coordination
+	
+incident identification
+	by incident monitoring process, to distinguish vulnerability
+		gather objective data to understand
+		timely incident analysis
+	tests, reviews, audits/logs, automated incident management system, dynamic testing tools, code scanners
+
+incident reporting and management control
+	report to incident manager, who coordinates the response
+		report including everything:
+			- from routine defects
+			- to embedded intentional objects
+	response being handled by response team:
+		understand issue and give best possible solution
+		need specific training and equipment
+		for foreseen issue, designated response team who knows the background
+	corresponding software helps
+
+potential incidents
+	defects identified but not appear, or new flaws found by inspections
+		- by outside organization
+		- by internal analysis
+	proper response before it happens
+
+active incident
+	immediate action by response team
+		- develop and apply patch
+		- change in procedure
+		- new enforcement
+	response team work:
+		- to limit damage
+		- to supervise later on development
+
+structured response
+	effective fashion
+	organizational procedure manual:
+		- set of actions
+		- definition of terms and concepts
+		- specify role and authorization of response team members
+
+enough resource
+	incident response manager decide whether enough resources and whether to escalate
+		- not responding
+		- improper
+		- delay
+		- errors
+
+response team build
+	manager
+	software analyst
+	programmer
+	others:
+		crime specialist
+		legal/governmental/public affairs experts
+
+2.3 Problem management
+	once a formal problem submitted, company offer a resolution
+	1) determine whether a problem actually exists
+		- replicate problem
+		- verify problem
+	2) analyze the problem
+		- type:
+			corrective, improvement, preventive or adaptive action
+		- scope:
+			affected items, impact and size of modification, estimation of resources, time/money costs, etc
+		- criticality:
+			overall performance, safety and security
+	3) options for implementation of modification
+	4) report to authorization agent, detailing:
+		- request (why and what to do)
+		- analysis results (details: type, scope, criticality)
+		- implementation options (how)
+	5) development, document, and communications
+
+	*change manager: coordinates the performance of actual change, do the analysis
+
+modification implementation
+	1) determine which software item/unit/version to be included
+		examining authorized Statement Of Work (SOW), to get
+		-> specification of software requirements (SRS)
+	2) development
+	3) test and evaluation criteria
+		- affected components: completeness and correctness
+		- unaffected: ensure not affected
+
+modification maintenance review and acceptance
+	determine the correctness, completeness and integrity of the modified system
+	review is undertaken once change agent/development confirm the change has been made
+		- conduct reviews to attest correctness and completeness
+		- ensure change is integrated back into system (by configuration control board)
+		- write new statement of work (SOW)
+		- sign-off
+		
+2.4 Change management
+	protect enterprise from risk associated with changing functioning
+	
+	patching: 
+		changes to software to fix vulnerabilities or bugs
+		- patch, hotfix, quick fix
+		- immediate or regular scheduled patching
+		- packaged together upon release
+		- large groups of patches are bundled together, as service packs
+			-> simply new installation, bring them to current release level
+		- regression test	
+
+3 Backup Recovery and Archiving
+	backing up software in case need to restore to a system on earlier operational position
+		- earlier release
+		- datasets associated
+
+4 Disposal
+	safely terminate existence
+
+	plan:
+		terminate the delivery of software services
+		transform system into socially and physically acceptable retiring state
+		health, safety, security, privacy, long-term condition
+
+	execution:	
+		sufficient timely notification of the plans and executions
+		parallel operations of retiring old one and replacing with new on
+
+1 b
+2 d x 
+3 a
+4 c
+5 c
+6 b !
+7 a !
+8 d !x
+9 b
+0 a
+1 c !
+2 d
+3 b
+4 d
+5 b

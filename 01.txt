@@ -1,0 +1,141 @@
+General Security Concepts
+
+1.Concepts:
+	CIA
+	AAA
+	Non-repudiation (no denying)
+
+2.Fundamental system elements:
+	SEC(SECurity) management:
+		Session: communication are secured from unauthorized access, Transmission Control Protocol
+		Exception -> fail-safe
+		Configuration
+
+
+3.Principles:
+	Good enough
+	Least privilege
+	Separation of duties
+	Layered Security, defense in depth
+	Fail-safe -> exception management
+	Economy of Mechanism (ASAP simple)
+	Complete Mediation (never bypassed)
+	Open Design:
+		security design (e.g, algorithm) will be open
+		security is not dependent upon the design
+		security is dependent on other element (e.g. a key)
+	Least Common & Leveraging Existing Component
+		- Separate process info
+		- Reuse, fewer new components such that less opportunity
+	Ease of use for users
+	Weakest link:
+		bucket theory, additional resources and work
+	Single point fail:
+		- all points analyzed
+		- but survive from single point
+
+4.Security Model
+	Access Control Model
+		1) Bell-LaPadula, it is confidentiality model
+			Simple Security Rule (no read up rule) 
+			Star Property Rule (only write down rule) 
+		2) Take-Grant Model
+			directed graph
+			not typically used, mostly for analyzing and presentation
+		3) Access Control Matrix Model
+			subject (user) by object (software component) matrix, actions as the value
+			general-purpose model, no constraints
+			hard to implement
+		4) Role Based Access Control
+		5) Rule Based Access Control, e.g. no access after work hours
+		6) Mandatory Access Model (MAC) vs Discretionary Access Model (DAC)
+			MAC
+			- security system controls access while individual subjects cannot change
+			- owner of an object cannot decide which other subjects may have Access
+			DAC
+			- owner of an object can decide
+	
+	MultipleLevel Security Model, e.g. top secret
+	
+	Integrity models, integrity is more/even important than confidentiality
+		1) Biba Integrity model:
+			low-water-mark: only write down (no write up)
+			use lower security level on lower level objects
+		2) Clark-Wilson Model:
+			CDI 
+				constrained data items, subject to integrity controls
+			CDI includes:
+				IVP (integrity verification process) 
+				TP  (transformation process, change state of data from one valid to another)
+			UDI 
+				unconstrained data items
+	
+	Information Flow Models, notion of information flows
+		1) Brewer-Nash Model (Chinese Wall), enforce confidentiality. commercial enterprise operations
+			- technology
+				prevent access to data from conflicting groups
+			- people
+				trained not to compromise
+			- policy
+				to ensure the technology and personnel
+		2) Data Flow Diagrams (DFD)
+			- storage 
+			- movement 
+			- processing 
+			of data
+		3) Use Case Model
+			- from functional perspective
+			- how system process data, normal and abnormal
+	
+	Assurance Models
+		assure the level of confidence that software is free from vulnerabilities 
+			- at anytime during life-cycle
+			- doesn't matter by design or by accident
+		focus on preventive element, driven by management focus on system design and construction
+		vs. sales driven focus
+		including misuse and abuse case
+			- structured set of arguments
+			- as evidence to demonstrate specific security claims
+	
+	Operational Model of Security:
+	|----------------+---------------------+------------------------+
+	| prevention ->  | detection ->        | response               |
+	|----------------+---------------------+------------------------+
+	| access control | logs                | backup                 |
+	| firewall       | intrusion detection | incident response team |
+	| encryption     | honeypots           | computer forensics     |
+	|----------------+---------------------+------------------------|
+		Prevention -> Detection -> Response
+		(Figure 1-2)
+
+5. Adversary type & group
+	type:
+		Script Kiddie
+		Hacker (key enemy)
+		Elite
+
+	group:
+		unstructured
+		structured
+		highly structured
+		nation-state
+
+	insiders vs outsiders
+
+1 c
+2 b
+3 d
+4 a !
+5 b
+
+6 a
+7 d
+8 b
+9 b
+0 c
+
+1 c
+2 c x
+3 d
+4 b
+5 c
